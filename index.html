@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Exames</title>
+  <link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+  <img src="amorzito-removebg.png">
+  <div class="calculator">
+    <h2>Simulador Viabilidade<br>Compra de Equipamentos</h2>
+    <select id="dropdownRating">
+        <option value="A">Rating A</option>
+        <option value="AA">Rating AA</option>
+        <option value="AAA">Rating AAA</option>
+        <option value="B">Rating B</option>
+        <option value="C">Rating C</option>
+    </select>
+    <select id="dropdownEquipamento">
+        <option value="ECG">ECG</option>
+        <option value="Holter">Holter</option>
+        <option value="M.A.P.A.">M.A.P.A.</option>
+        <option value="ULTRASSOM FT 412">ULTRASSOM FT 412</option>
+    </select>
+    <select id="dropdownExame">
+        <option value="ECG - Eletrocardiograma Convencional">ECG - Eletrocardiograma Convencional</option>
+        <option value="Holter 24 Horas - 2 Ou Mais Canais">Holter 24 Horas - 2 Ou Mais Canais</option>
+        <option value="MAPA 24 Horas">MAPA 24 Horas</option>
+        <option value="US Abdome e Dinamico das Vias Urinarias">US Abdome e Dinamico das Vias Urinarias</option>
+        <option value="US Abdomen Superior">US Abdomen Superior</option>
+        <option value="US Cervical">US Cervical</option>
+        <option value="US Com Doppler Colorido de Arterias Viscera ">US Com Doppler Colorido de Arterias Viscera </option>
+        <option value="US Craniana">US Craniana</option>
+        <option value="US da Bolsa Escrotal Pediatrico">US da Bolsa Escrotal Pediatrico</option>
+        <option value="US da Bolsa Excrotal Com Dopple">US da Bolsa Excrotal Com Dopple</option>
+        <option value="US da Mao">US da Mao</option>
+        <option value="US das Articulacoes">US das Articulacoes</option>
+        <option value="US das Axilas">US das Axilas</option>
+        <option value="US das Mamas">US das Mamas</option>
+        <option value="US das Mamas Com Doppler">US das Mamas Com Doppler</option>
+        <option value="US das Mamas Pediatrico">US das Mamas Pediatrico</option>
+        <option value="US das Partes Moles">US das Partes Moles</option>
+        <option value="US de Antebraco">US de Antebraco</option>
+        <option value="US de Parede Abdominal">US de Parede Abdominal</option>
+        <option value="US do Aparelho Urinario">US do Aparelho Urinario</option>
+        <option value="US do Escroto">US do Escroto</option>
+        <option value="US do Joelho">US do Joelho</option>
+        <option value="US do Ombro">US do Ombro</option>
+        <option value="US do Pe">US do Pe</option>
+        <option value="US do Quadril">US do Quadril</option>
+        <option value="US do Tornozelo">US do Tornozelo</option>
+        <option value="US da Tireoide">US da Tireoide</option>
+        <option value="US da Tireoide Com Doppler">US da Tireoide Com Doppler</option>
+        <option value="US dos Musculos (Partes Moles)  ">US dos Musculos (Partes Moles)  </option>
+        <option value="US Dinamico das Vias Urinarias ">US Dinamico das Vias Urinarias </option>
+        <option value="US Doppler Colorido 1 Vaso">US Doppler Colorido 1 Vaso</option>
+        <option value="Us Doppler Colorido 2 Vasos">Us Doppler Colorido 2 Vasos</option>
+        <option value="US Globo Ocular">US Globo Ocular</option>
+        <option value="US Inguinal">US Inguinal</option>
+        <option value="US Obstetrica">US Obstetrica</option>
+        <option value="US Obstetrica Com Doppler">US Obstetrica Com Doppler</option>
+        <option value="US Obstetrica Com Perfil Biofisico">US Obstetrica Com Perfil Biofisico</option>
+        <option value="US Obstetrica Morfologico">US Obstetrica Morfologico</option>
+        <option value="US Obstetrico Com Translucencia Nucal">US Obstetrico Com Translucencia Nucal</option>
+        <option value="US Obstetrico de Primeiro Trimestre">US Obstetrico de Primeiro Trimestre</option>
+        <option value="US Obstetrico Morfologico">US Obstetrico Morfologico</option>
+        <option value="US Obstetrico Morfologico de 1º">US Obstetrico Morfologico de 1º</option>
+        <option value="US Pelvico Feminino">US Pelvico Feminino</option>
+        <option value="US Pélvico Transvaginal">US Pélvico Transvaginal</option>
+        <option value="US Prostata Transretal Com Biopsia">US Prostata Transretal Com Biopsia</option>
+        <option value="US Prostata Via Abdominal">US Prostata Via Abdominal</option>
+        <option value="US Superficial da Coxa">US Superficial da Coxa</option>
+        <option value="US Superficial da Perna">US Superficial da Perna</option>
+        <option value="US Superficial do Braco">US Superficial do Braco</option>
+        <option value="US Superficial do Pescoço">US Superficial do Pescoço</option>
+        <option value="US Transvaginal C/ Preparo Intestinal ">US Transvaginal C/ Preparo Intestinal </option>
+    </select>
+    <div id="novoSelect"></div>
+    <div>
+      <button id="Adiciona" onclick="addExame()">Adicionar outro Exame</button>
+      <button id="Adiciona"onclick="minusExame()">Remover Exames</button>
+    </div>
+    <div>
+      
+      <p id="Titulo1">Valor do Exame: <span id="precoExame"></span></p>
+      <p id="Titulo2">Valor do Equipamento: <span id="valorEquipamento"></span></p>
+    </div>
+    
+    <input type="text" id="Rating" placeholder="Rating" disabled hidden>
+    <input type="text" id="Equipamento" placeholder="Equipamento" disabled hidden>
+    <input type="number" id="ValorEquipamento" placeholder="Valor Equipamento" disabled hidden>
+    <input type="text" id="NomeExame" placeholder="Nome Exame" disabled hidden>
+    <input type="number" id="ValorExame" placeholder="Valor Exame" disabled hidden>
+
+    <div class="keys">
+        <p>Quantidade de exames</p>
+        <input type="QtdExames" id="QtdExames">
+        <p>% do parceiro</p>
+        <input type="PorcentoRepasseParceiro" id="PorcentoRepasseParceiro">
+        
+        <!-- Campos adicionais para cálculos -->
+        <p>Valor Total</p>
+        <input type="number" id="ValorTotal" placeholder="Valor total" disabled>
+        <p>% Repasse Clínica</p>
+        <input type="text" id="PorcentoRepasseClinica" placeholder="% Repasse Clinica" disabled>
+        <p>Repasse Parceiro</p>
+        <input type="number" id="RepasseParceiro" placeholder="Repasse Parceiro" disabled>
+        <p>Repasse Clínica</p>
+        <input type="number" id="RepasseClinica" placeholder="Repasse Clinica" disabled>
+        <p>Royalties (4%)</p>
+        <input type="number" id="Royalties" placeholder="Royalties" disabled>
+        <p>Impostos (12%)</p>
+        <input type="number" id="Impostos" placeholder="Impostos 12%" disabled>
+        <p>Lucro Líquido</p>
+        <input type="number" id="LucroLiquido" placeholder="Lucro liquido" disabled>
+        <p>Valor Faltante</p>
+        <input type="number" id="ValorFaltante" placeholder="Valor Faltante" disabled>
+        <p class="Meses">Qtd de meses para quitar</p>
+        <input type="number" id="MesesQuitar" class="Meses" placeholder="Meses quitar" disabled>
+    </div>
+    <div id="footer">
+      <button onclick="clearDisplay()">Limpar</button>
+      <button onclick="calcularPreco()">Calcular Preço</button>
+    </div>
+    <button id="excel" onclick="exportToXLSX()">Exportar para Excel</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.0/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+  <script src="script2.js"></script>
+</body>
+</html>

@@ -391,10 +391,12 @@ var count = 1;
 
         if (!isNaN(precoExameNovo)) {
             valorExameTotal += precoExameNovo;
-			DivisaovalorExameTotal = valorExameTotal / count;
+			
         }
+		
     });
-
+	DivisaovalorExameTotal = valorExameTotal / count;
+	
     console.log(precosExames[ratingSelecionado][equipamentoSelecionado]);
     //document.getElementById("precoExame").textContent = valorExameTotal ? `R$${valorExameTotal}` : 'Preço não encontrado';
     document.getElementById("precoExame").textContent = DivisaovalorExameTotal ? `R$${DivisaovalorExameTotal}` : 'Preço não encontrado';
@@ -432,7 +434,6 @@ var count = 1;
     document.getElementById('LucroLiquido').value = lucroLiquido.toFixed(2);
     document.getElementById('ValorFaltante').value = valorFaltante.toFixed(2);
     document.getElementById('MesesQuitar').value = isNaN(mesesQuitar1) ? '' : mesesQuitar1.toFixed(0);
-	console.log("AQUII", document.getElementById('MesesQuitar').value);
 
 	document.getElementById("Titulo1").style.visibility = 'visible';
 	document.getElementById("Titulo2").style.visibility = 'visible';

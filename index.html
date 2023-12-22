@@ -7,9 +7,10 @@
 </head>
 
 <body>
-  <img src="amorzito-removebg.png">
+  
   <div class="calculator">
     <h2>Simulador Viabilidade<br>Compra de Equipamentos</h2>
+    <img src="amorzito-removebg.png">
     <select id="dropdownRating">
         <option value="A">Rating A</option>
         <option value="AA">Rating AA</option>
@@ -122,7 +123,7 @@
     <div id="footer">
       <button onclick="clearDisplay()">Limpar</button>
       <button onclick="calcularPreco()">Calcular Preço</button>
-    </div>
+    </div id="planilha">
     <button id="excel" onclick="exportToXLSX()">Exportar para Excel</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.0/dist/xlsx.full.min.js"></script>

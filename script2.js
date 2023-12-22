@@ -455,9 +455,7 @@ var count = 1;
 
   function minusExame(){
     const selectExistente = document.getElementById('novoDropdownExame');
-	const precoExistente = document.getElementById('novoPrecoExame');
     selectExistente.remove();
-	precoExistente.remove();
 
 
   }

@@ -40,4 +40,5 @@ function clearDisplay() {
 
     // Salvar o arquivo XLSX
     XLSX.writeFile(workbook, 'dados.xlsx');
+
 }

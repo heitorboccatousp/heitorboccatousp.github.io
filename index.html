@@ -31,9 +31,9 @@
         <option value="US Abdome e Dinamico das Vias Urinarias">US Abdome e Dinamico das Vias Urinarias</option>
         <option value="US Abdomen Superior">US Abdomen Superior</option>
         <option value="US Cervical">US Cervical</option>
-        <option value="US Com Doppler Colorido de Arterias Viscera ">US Com Doppler Colorido de Arterias Viscera </option>
+        <option value="US Com Doppler Colorido de Arterias Viscera">US Com Doppler Colorido de Arterias Viscera</option>
         <option value="US Craniana">US Craniana</option>
-        <option value="US da Bolsa Escrotal Pediatrico">US da Bolsa Escrotal Pediatrico</option>
+        <option value="US de Bolsa Escrotal Pediatrico">US de Bolsa Escrotal Pediatrico</option>
         <option value="US da Bolsa Excrotal Com Dopple">US da Bolsa Excrotal Com Dopple</option>
         <option value="US da Mao">US da Mao</option>
         <option value="US das Articulacoes">US das Articulacoes</option>
@@ -110,9 +110,9 @@
         <p>Repasse Clínica</p>
         <input type="number" id="RepasseClinica" placeholder="Repasse Clinica" disabled>
         <p>Royalties (4%)</p>
-        <input type="number" id="Royalties" placeholder="Royalties" disabled>
-        <p>Impostos (12%)</p>
-        <input type="number" id="Impostos" placeholder="Impostos 12%" disabled>
+        <input type="number" id="Royalties" placeholder="Royalties (4%)" disabled>
+        <p>Impostos</p>
+        <input type="number" id="Impostos" placeholder="Impostos" disabled>
         <p>Lucro Líquido</p>
         <input type="number" id="LucroLiquido" placeholder="Lucro liquido" disabled>
         <p>Valor Faltante</p>
@@ -125,6 +125,7 @@
       <button onclick="calcularPreco()">Calcular Preço</button>
     </div id="planilha">
     <button id="excel" onclick="exportToXLSX()">Exportar para Excel</button>
+    <footer>Fonte: Inteligência de Negócio</footer>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.0/dist/xlsx.full.min.js"></script>
   <script src="script.js"></script>

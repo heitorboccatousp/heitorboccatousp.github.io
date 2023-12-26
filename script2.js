@@ -344,16 +344,14 @@ const precosExames = {
     },
     // Adicione mais ratings conforme necessário
   };
-  //console.log(document.getElementsByClassName("titulo"));
-  //document.getElementsByClassName("titulo").style.visibility = 'hidden';
+  
 var count = 1;
+var countBtn = 1;
   
   // Função para calcular o preço do exame com base no rating, equipamento e nome do exame selecionados
   function calcularPreco() {
-	var precoExameNovo = 0;
-	var DivisaovalorExameTotal = 0;
-    //const selectsExames = document.querySelectorAll('#novoDropdownExame select');
-
+    var precoExameNovo = 0;
+    var DivisaovalorExameTotal = 0;
     var valorExameTotal = 0; // Definir o valor inicial como zero
 
     const ratingSelecionado = document.getElementById("dropdownRating").value;
@@ -387,20 +385,27 @@ var count = 1;
         const exameSelecionadoNovo = selectExame.value;
         const precoExameNovo = precosExames[ratingSelecionado][equipamentoSelecionado][exameSelecionadoNovo];
 
-        console.log("Preço exame*****", precoExameNovo);
+        console.log("Preço exame Novo", precoExameNovo);
 
         if (!isNaN(precoExameNovo)) {
+            //count += 1;
             valorExameTotal += precoExameNovo;
-			
+        }else{
+          count -= 1;
+          if (count <= 0){
+            count = countBtn;
+          }
         }
 		
     });
-	DivisaovalorExameTotal = valorExameTotal / count;
+    console.log("Count", count);
+    console.log("CountBTN", countBtn);
+	  DivisaovalorExameTotal = valorExameTotal / count;
 	
-    console.log(precosExames[ratingSelecionado][equipamentoSelecionado]);
     //document.getElementById("precoExame").textContent = valorExameTotal ? `R$${valorExameTotal}` : 'Preço não encontrado';
+    //document.getElementById("Titulo1").value = DivisaovalorExameTotal.toFixed(2);
     document.getElementById("precoExame").textContent = DivisaovalorExameTotal ? `R$${DivisaovalorExameTotal}` : 'Preço não encontrado';
-	document.getElementById("valorEquipamento").textContent = `R$${valorEquipamento}`;
+	  document.getElementById("valorEquipamento").textContent = `R$${valorEquipamento}`;
 
     // Obtenção dos valores dos campos de entrada
     const rating = parseFloat(document.getElementById('Rating').value) || 0;
@@ -422,7 +427,7 @@ var count = 1;
     const mesesQuitar = valorEquipamento2 / lucroLiquido;
     var mesesQuitar1 = Math.round(mesesQuitar);
     mesesQuitar1 += 1;
-	const repasseClinicaNormalizado = porcentoRepasseClinica*100;
+	  const repasseClinicaNormalizado = porcentoRepasseClinica*100;
   
     // Exibição dos resultados nos campos de texto
     document.getElementById('ValorTotal').value = valorTotal.toFixed(2);
@@ -435,8 +440,8 @@ var count = 1;
     document.getElementById('ValorFaltante').value = valorFaltante.toFixed(2);
     document.getElementById('MesesQuitar').value = isNaN(mesesQuitar1) ? '' : mesesQuitar1.toFixed(0);
 
-	document.getElementById("Titulo1").style.visibility = 'visible';
-	document.getElementById("Titulo2").style.visibility = 'visible';
+    document.getElementById("Titulo1").style.visibility = 'visible';
+    document.getElementById("Titulo2").style.visibility = 'visible';
   }
   
   function addExame(){
@@ -449,13 +454,19 @@ var count = 1;
     // Adiciona o novo select na área designada no HTML
     const areaSelect = document.getElementById('novoSelect');
     areaSelect.appendChild(novoSelect);
-	count += 1; 
-
+    console.log(areaSelect.closest);
+	  count += 1; 
+    countBtn += 1;
+  
 	}
 
   function minusExame(){
     const selectExistente = document.getElementById('novoDropdownExame');
     selectExistente.remove();
-
+    count -= 1;
+    if (count <= 0){
+      count = 1;
+    }
+    countBtn -= 1;
 
   }
